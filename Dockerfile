@@ -7,8 +7,8 @@ RUN apt update \
   && rm -rf /var/lib/apt/lists/*
 
 # Copy the custom Nginx configuration file to the container
-COPY default.conf /etc/nginx/conf.d/nginx-template.conf
+COPY default.conf /etc/nginx/conf.d/nginx.conf
 
 EXPOSE 80
 
-CMD ["/bin/sh", "-c", "/etc/nginx/conf.d/nginx-template.conf > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"]
+CMD ["/bin/sh", "-c", "exec nginx -g 'daemon off;'"]
