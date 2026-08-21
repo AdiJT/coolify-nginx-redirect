@@ -16,4 +16,4 @@ EXPOSE 80
 
 USER www-data
 
-CMD ["/bin/sh", "-c", "/etc/nginx/conf.d/nginx-template.conf > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"]
+CMD ["/bin/sh", "-c", "exec nginx -g 'daemon off;'"]
